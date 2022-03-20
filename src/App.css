@@ -1,38 +1,137 @@
-.App {
-  text-align: center;
+:root {
+  --main-color: black;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0%;
+  padding: 0%;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.wrapper {
+  background: linear-gradient(to right, rgb(255, 81, 0), rgb(54, 6, 177));
+  align-items: center;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+  font-size: 2rem;
+  flex-direction: column;
 }
 
-.App-link {
-  color: #61dafb;
+.mainParent {
+  border-radius: 25px;
+  width: 450px;
+  background: linear-gradient(rgb(6, 9, 214), rgb(143, 191, 87));
+  padding: 1rem;
+  border: 25px;
+  box-shadow: -4px 4px 5px rgba(0, 0, 0, 0.25);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* display section  */
+.result {
+  border-color: rgb(250, 249, 247);
+  background-color: aliceblue;
+  border-radius: 25px;
+  padding: 1rem;
+  font-weight: bolder;
+  box-shadow: -4px 4px 5px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.items {
+  margin-top: 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "clear clean divide multi"
+    "no7 no8 no9 plus"
+    "no4 no5 no6 minus"
+    "no1 no2 no3 ans"
+    "dot no0 no0 ans";
+}
+.items > button {
+  cursor: pointer;
+  min-height: 70px;
+  box-shadow: -4px 4px 5px rgb(8, 8, 8);
+  font-size: 1.3rem;
+  font-weight: bolder;
+  border-radius: 25px;
+  color: var(--main-color);
+  background: rgb(247, 244, 244);
+}
+
+.Clear {
+  grid-area: clear;
+}
+.clean {
+  background: red;
+  grid-area: clean;
+}
+.divide {
+  grid-area: divide;
+}
+.multi {
+  grid-area: multi;
+}
+.plus {
+  grid-area: plus;
+}
+.minus {
+  grid-area: minus;
+}
+.no-7 {
+  grid-area: no7;
+}
+.no-8 {
+  grid-area: no8;
+}
+.no-9 {
+  grid-area: no9;
+}
+.no-4 {
+  grid-area: no4;
+}
+.no-5 {
+  grid-area: no5;
+}
+.no-6 {
+  grid-area: no6;
+}
+.no-1 {
+  grid-area: no1;
+}
+.no-2 {
+  grid-area: no2;
+}
+.no-3 {
+  grid-area: no3;
+}
+.no-0 {
+  grid-area: no0;
+}
+.dot {
+  grid-area: dot;
+}
+.ans {
+  grid-area: ans;
+}
+
+.prank {
+  animation: shake 0.3s ease-in;
+}
+@keyframes shake {
+  0% {
+    transform: translateX(10px);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: translateX(-10px);
+  }
+  75% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(-10px);
   }
 }
